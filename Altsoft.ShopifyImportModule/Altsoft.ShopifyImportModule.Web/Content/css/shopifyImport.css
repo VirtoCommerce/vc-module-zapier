@@ -1,0 +1,8 @@
+﻿.shopify-icon {
+    background-image: url('../images/shopify.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.shopify-header {
+    padding: 10px
+}

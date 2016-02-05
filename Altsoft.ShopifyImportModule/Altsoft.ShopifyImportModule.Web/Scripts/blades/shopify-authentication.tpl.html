@@ -1,0 +1,38 @@
+﻿<div class="blade-content">
+    <div class="blade-inner">
+        <div class="inner-block" ng-controller="altsoft.shopifyImportModule.shopifyAuthenticationController">
+            <form class="form">
+                <fieldset>
+                    <div class="form-group">
+                        <label class="form-label">API key</label>
+                        <div class="form-input __info">
+                            <input type="text" required placeholder="Please enter your Shopify private application API key" ng-model="apiKey">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Password</label>
+                        <div class="form-input __info">
+                            <input type="text" required placeholder="Please enter your Shopify private application password" ng-model="password">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Shop name</label>
+                        <div class="form-input __info">
+                            <input type="text" required placeholder="Please enter your Shopify shop name" ng-model="shopName">
+                        </div>
+                    </div>
+
+                    <div ng-show="isValid() && wrongCridentials" class="error">
+                        Provided cridentials is not valid!
+                    </div>
+
+                    <div class="form-group">
+                        <button class="btn" ng-disabled="!isValid()" ng-click="save()">Save</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
