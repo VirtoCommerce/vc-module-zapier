@@ -309,20 +309,12 @@ namespace Altsoft.ShopifyImportModule.Web.Services
             var productsToCreate = new List<coreModel.CatalogProduct>();
             var productsToUpdate = new List<coreModel.CatalogProduct>();
 
+            var alreadyExistProducts = _productService.GetByIds(virtoData.Products.Select(x => x.Id).Where(x => x != null).ToArray(), coreModel.ItemResponseGroup.ItemInfo);
             foreach (var product in virtoData.Products)
             {
-                var existingProduct = _searchService.Search(new coreModel.SearchCriteria()
+               
+                if (alreadyExistProducts.Any(x=>x.Id == product.Id))
                 {
-                    CatalogId = importParams.VirtoCatalogId,
-                    SearchInChildren = true,
-                    ResponseGroup = coreModel.SearchResponseGroup.WithProducts,
-                    Take = int.MaxValue,
-                    Code = product.Code
-                }).Products.FirstOrDefault();
-
-                if (existingProduct != null)
-                {
-                    product.Id = existingProduct.Id;
                     productsToUpdate.Add(product);
                 }
                 else
