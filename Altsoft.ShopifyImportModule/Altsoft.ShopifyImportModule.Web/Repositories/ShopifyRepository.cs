@@ -19,8 +19,31 @@ namespace Altsoft.ShopifyImportModule.Web.Repositories
 
         public IEnumerable<ShopifyProduct> GetShopifyProducts()
         {
-            var result = GetShopifyList<ShopifyProduct, ShopifyProductList>("products.json", list => list.Products);
-            return result;
+            var retVal = new List<ShopifyProduct>();
+
+            long totalCount = 0;
+            var requestUrl = GetRequestUrl("products/count.json");
+            var cridentials = _shopifyAuthenticationService.GetCridentials();
+            using (var webClient = new WebClient())
+            {
+                webClient.Credentials = cridentials;
+
+                var json = webClient.DownloadString(requestUrl);
+                var totalCountObj = JsonConvert.DeserializeObject<ShopifyTotalCount>(json);
+                if(totalCountObj != null)
+                {
+                    totalCount = totalCountObj.Count;
+                }
+            }
+            var limit = 50;
+            for(var page = 1; totalCount > 0; page++)
+            {
+                var result = GetShopifyList<ShopifyProduct, ShopifyProductList>(string.Format("products.json?limit={0}&page={1}", limit, page), list => list.Products);
+                retVal.AddRange(result);
+                totalCount -= limit;
+            }
+
+            return retVal;
         }
 
         public IEnumerable<ShopifyCustomCollection> GetShopifyCollections()

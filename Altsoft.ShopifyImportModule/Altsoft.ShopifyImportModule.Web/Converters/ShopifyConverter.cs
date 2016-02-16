@@ -44,6 +44,7 @@ namespace Altsoft.ShopifyImportModule.Web.Converters
 
             var retVal = new CatalogProduct
             {
+                Id = shopifyProduct.Handle + "-" + shopifyProduct.Id.ToString(),
                 Name = shopifyProduct.Title,
                 Code = shopifyProduct.Handle,
                 StartDate = shopifyProduct.PublishedAt,

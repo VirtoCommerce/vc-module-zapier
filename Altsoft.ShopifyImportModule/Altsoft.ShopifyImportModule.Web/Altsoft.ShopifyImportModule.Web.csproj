@@ -137,6 +137,7 @@
     <Compile Include="Models\Shopify\ShopifyOption.cs" />
     <Compile Include="Models\Shopify\ShopifyProduct.cs" />
     <Compile Include="Models\Shopify\ShopifyTheme.cs" />
+    <Compile Include="Models\Shopify\ShopifyTotalCount.cs" />
     <Compile Include="Models\Shopify\ShopifyVariant.cs" />
     <Compile Include="Models\VirtoData.cs" />
     <Compile Include="Module.cs" />
