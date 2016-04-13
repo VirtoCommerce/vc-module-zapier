@@ -1,0 +1,78 @@
+﻿<div class="blade-static __collapsed">
+    <p class="shopify-header">
+        Please choose shopify object types for import
+    </p>
+</div>
+<div class="blade-content" >
+    <div class="blade-inner">
+        <div class="inner-block">
+            <div class="list __items">
+                <label class="list-item">
+                    <input type="checkbox" ng-model="blade.importConfiguration.importCollections">
+                    <span class="switch"></span>
+                    <i class="list-ico fa fa-folder"></i>
+                    <span class="list-t">Collections</span>
+                    <span class="list-descr">The main Variation. Can be used for targeted promotions.</span>
+                </label>
+
+                <label class="list-item">
+                    <input type="checkbox" ng-model="blade.importConfiguration.importProducts">
+                    <span class="switch"></span>
+                    <i class="list-ico fa fa-shopping-cart"></i>
+                    <span class="list-t">Products</span>
+                    <span class="list-descr">The main Variation. Can be used for targeted promotions.</span>
+                </label>
+
+
+                <label class="list-item">
+                    <input type="checkbox" ng-model="blade.importConfiguration.importCustomers">
+                    <span class="switch"></span>
+                    <i class="list-ico fa fa-user"></i>
+                    <span class="list-t">Customers</span>
+                    <span class="list-descr">The main Variation. Can be used for targeted promotions.</span>
+                </label>
+
+                <label class="list-item">
+                    <input type="checkbox" ng-model="blade.importConfiguration.importOrders">
+                    <span class="switch"></span>
+                    <i class="list-ico fa fa-file-text"></i>
+                    <span class="list-t">Orders</span>
+                    <span class="list-descr">The main Variation. Can be used for targeted promotions.</span>
+                </label>
+
+                <label class="list-item">
+                    <input type="checkbox" ng-model="blade.importConfiguration.importThemes">
+                    <span class="switch"></span>
+                    <i class="list-ico fa fa-picture-o"></i>
+                    <span class="list-t">Themes</span>
+                    <span class="list-descr">The main Variation. Can be used for targeted promotions.</span>
+                    <span class="list-descr" ng-show="blade.importConfiguration.storeId">Themes will be imported to '{{blade.importConfiguration.storeId}}'</span>
+
+                </label>
+
+                <label class="list-item">
+                    <input type="checkbox" ng-model="blade.importConfiguration.importPages">
+                    <span class="switch"></span>
+                    <i class="list-ico fa fa-sitemap"></i>
+                    <span class="list-t">Pages</span>
+                    <span class="list-descr">The main Variation. Can be used for targeted promotions.</span>
+                    <span class="list-descr" ng-show="blade.importConfiguration.storeId">Pages will be imported to '{{blade.importConfiguration.storeId}}'</span>
+                </label>
+
+                <label class="list-item">
+                    <input type="checkbox" ng-model="blade.importConfiguration.importBlogs">
+                    <span class="switch"></span>
+                    <i class="list-ico fa fa-comment-o"></i>
+                    <span class="list-t">Blogs</span>
+                    <span class="list-descr">The main Variation. Can be used for targeted promotions.</span>
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="blade-static __bottom">
+        <button class="btn" ng-click="startImport(blade.importConfiguration)" ng-disabled="!isValid()">
+            <span>Start import</span>
+        </button>
+    </div>
+</div>
+

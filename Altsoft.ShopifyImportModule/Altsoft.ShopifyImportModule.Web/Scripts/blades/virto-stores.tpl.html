@@ -1,0 +1,18 @@
+﻿<div class="blade-content">
+    <div class="blade-inner">
+        <div class="inner-block">
+            <div class="list __items">
+                <label class="list-item" ng-repeat="store in availableStores" >
+                    <input type="radio" name="storeId" ng-model="blade.importConfiguration.storeId" ng-value="store.id"/>
+                    <span class="switch"></span>
+                    <span class="list-t">{{store.name}}</span>
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="blade-static __bottom">
+        <button class="btn" ng-click="save()" ng-disabled="!isValid()">
+            <span>Select store</span>
+        </button>
+    </div>
+</div>
