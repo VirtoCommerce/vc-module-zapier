@@ -35,7 +35,7 @@ namespace Altsoft.ShopifyImportModule.Web.Services
         private readonly ICatalogSearchService _searchService;
         private readonly IPricingService _pricingService;
         private readonly IPropertyService _propertyService;
-        private readonly IContentStorageProvider _contentStorageProvider;
+        private readonly IContentBlobStorageProvider _contentStorageProvider;
 
         #endregion
 
@@ -50,7 +50,7 @@ namespace Altsoft.ShopifyImportModule.Web.Services
             ICatalogSearchService searchService,
             IPricingService pricingService, 
             IPropertyService propertyService,
-            Func<IContentStorageProvider> contentStorageProviderFactory)
+            Func<IContentBlobStorageProvider> contentStorageProviderFactory)
         {
 
             _shopifyRepository = shopifyRepository;
