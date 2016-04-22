@@ -87,6 +87,7 @@
     <Content Include="Content\images\shopify.png" />
     <Content Include="packages.config" />
     <Content Include="module.manifest" />
+    <None Include="app.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -108,9 +109,9 @@
     <Content Include="Scripts\home\home.tpl.html" />
     <Content Include="Scripts\resources\shopifyImportResources.js" />
     <Content Include="Scripts\shopifyImport.js" />
-    <Content Include="Web.config">
+    <None Include="Web.config">
       <SubType>Designer</SubType>
-    </Content>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\Api\ShopifyAuthenticationController.cs" />

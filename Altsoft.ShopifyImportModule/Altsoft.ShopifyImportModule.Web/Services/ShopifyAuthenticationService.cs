@@ -6,7 +6,7 @@ using VirtoCommerce.Platform.Core.Settings;
 
 namespace Altsoft.ShopifyImportModule.Web.Services
 {
-    public class ShopifyAuthenticationService:IShopifyAuthenticationService
+    public class ShopifyAuthenticationService : IShopifyAuthenticationService
     {
         private const string ApiKeyKeyName = "Altsoft.ShopifyImport.Credentials.APIKey";
         private const string PasswordKeyName = "Altsoft.ShopifyImport.Credentials.Password";
@@ -67,7 +67,7 @@ namespace Altsoft.ShopifyImportModule.Web.Services
             {
                 var shopName = GetShopName();
                 var param = "products.json";
-                var requestUrl =  string.Format("https://{0}.myshopify.com/admin/{1}", shopName, param);
+                var requestUrl = string.Format("https://{0}.myshopify.com/admin/{1}", shopName, param);
                 var cridentials = GetCridentials();
                 using (var webClient = new WebClient())
                 {
@@ -76,7 +76,7 @@ namespace Altsoft.ShopifyImportModule.Web.Services
                     var json = webClient.DownloadString(requestUrl);
                 }
             }
-            catch (Exception e)
+            catch
             {
                 result = false;
             }
@@ -97,7 +97,7 @@ namespace Altsoft.ShopifyImportModule.Web.Services
             var password = _settingsManager.GetValue(PasswordKeyName, string.Empty);
             var shopName = _settingsManager.GetValue(ShopNameKeyName, string.Empty);
 
-            var result = new AuthenticationModel {ApiKey = apiKey, Password = password, ShopName = shopName};
+            var result = new AuthenticationModel { ApiKey = apiKey, Password = password, ShopName = shopName };
 
             return result;
         }
