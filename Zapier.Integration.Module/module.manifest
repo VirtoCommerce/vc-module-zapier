@@ -8,15 +8,16 @@
     </dependencies>
 
     <title>Zapier integration</title>
-    <description>APIs and UI for sync with Zapier</description>
+    <description>APIs for syncing with Zapier</description>
     <authors>
-        <author>Virto Commerce</author>
+        <author>Andrej Artiomov</author>
+        <author>Egidijus Mažeika</author>
     </authors>
     <owners>
         <owner>Virto Commerce</owner>
     </owners>
-    <projectUrl>http://virtocommerce.com/</projectUrl>
-    <iconUrl>Modules/$(Zapier.Integration)/Content/Zapier-300x155.png</iconUrl>
+    <projectUrl>https://github.com/VirtoCommerce/vc-module-zapier</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/VirtoCommerce/vc-module-zapier/master/Zapier.Integration.Module/Content/Zapier-300x155.png</iconUrl>
     <releaseNotes>First version.</releaseNotes>
     <copyright>Copyright © 2011-2016 Virto Commerce. All rights reserved</copyright>
     <tags>zapier</tags>
@@ -24,7 +25,7 @@
     <assemblyFile>Zapier.IntegrationModule.Web.dll</assemblyFile>
     <moduleType>Zapier.IntegrationModule.Web.Module, Zapier.IntegrationModule.Web</moduleType>
 
-    <settings>
+    <!--<settings>
         <group name="Integration|Zapier Description">
             <setting>
                 <name>Zapier.IntegrationModule.Description</name>
@@ -33,13 +34,6 @@
                 <title>Description</title>
                 <description>Description of Zapier for public site</description>
             </setting>
-            <setting>
-                <name>Zapier.IntegrationModule.LogoUrl</name>
-                <valueType>string</valueType>
-                <defaultValue>https://sendgrid.com/blog/wp-content/uploads/2012/09/Zapier-300x155.png</defaultValue>
-                <title>Logo url</title>
-                <description>Zapier logo url</description>
-            </setting>
         </group>
-    </settings>
+    </settings>-->
 </module>

@@ -6,7 +6,7 @@ using Zapier.IntegrationModule.Web.Providers.Interfaces;
 
 namespace Zapier.IntegrationModule.Web.Providers.Implementations
 {
-    public class ContactsProvider: IContactsProvider
+    public class ContactsProvider : IContactsProvider
     {
         private readonly IMemberService _memberService;
         private readonly IMemberSearchService _memberSearchService;
@@ -26,8 +26,14 @@ namespace Zapier.IntegrationModule.Web.Providers.Implementations
                 Sort = "CreatedDate:desc"
             };
 
-            return _memberSearchService.SearchMembers(searchCrit).Members.OfType<Contact>();
-          
+            var memberIDs = _memberSearchService.SearchMembers(searchCrit)
+                .Members
+                .OfType<Contact>()
+                .Select(m => { return m.Id; })
+                .ToArray();
+
+            var retVal = _memberService.GetByIds(memberIDs).OfType<Contact>();
+            return retVal;
         }
 
         public Contact NewContact(Contact newContact)
