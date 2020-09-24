@@ -16,7 +16,7 @@ Installing VirtoCommerce App on Zapier:
 
 Details to pay attention:
 * VirtoCommerce Portal url should be entered without "http://" or "https://" prefix (e.g., demo.virtocommerce.com/admin)
-* API Key should be a simple API key generated for a VirtoCommerce user having a "security:call_api" permission. 
+* API Key should be a simple API key generated for a VirtoCommerce user. 
 
 # Settings
 This module has no settings defined as all integration actions are initiated from Zapier.
